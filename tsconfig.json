@@ -1,0 +1,36 @@
+{
+	"moduleResolution": "Bundler", // "Node10", "Node16" or "NodeNext"
+	"compilerOptions": {
+	"esModuleInterop": true,
+	"strict": true, // Optional, but recommended,
+	  "module": "commonjs",
+	  "declaration": true,
+	  "removeComments": true,
+	  "emitDecoratorMetadata": true,
+	  "experimentalDecorators": true,
+	  "allowSyntheticDefaultImports": true,
+	  "target": "ES2021",
+	  "sourceMap": true,
+	  "outDir": "./dist",
+	  "baseUrl": "./",
+	  "incremental": true,
+	  "skipLibCheck": true,
+	  "strictNullChecks": false,
+	  "noImplicitAny": false,
+	  "strictBindCallApply": false,
+	  "forceConsistentCasingInFileNames": false,
+	  "noFallthroughCasesInSwitch": false,
+	},
+	"type": "commonjs",
+	"include": ["src/**/*.ts"],
+   "exclude": ["node_modules", "**/*.spec.ts"],
+  "ts-node": {
+    "esm": true
+  },
+	"plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      }
+    ]
+  
+  }

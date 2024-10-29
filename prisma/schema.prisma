@@ -1,0 +1,180 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Character {  
+  // Character Information
+  id          Int         @id @default(autoincrement())
+  characterName   String      @db.VarChar(255)
+  race        String      @db.VarChar(255)
+  profession  String      @db.VarChar(255)
+  level       Int          
+  experience  Int          
+  equipment   String      @db.VarChar(255)
+  magic       String      @db.VarChar(255)
+  settings    String      @db.VarChar(255)
+
+  // Attributes
+  realmpower  Int          
+  powerpoints Int         
+  basehp      Int          
+  totalhp     Int          
+  actualhp    Int          
+  attributes  String      @db.VarChar(255)
+  temporaryAbbr String    @db.VarChar(255)
+  potentialAbbr String    @db.VarChar(255)
+  developmentAbbr String  @db.VarChar(255)
+  baseAbbr    String      @db.VarChar(255)
+  raceAbbr    String      @db.VarChar(255)
+  totalAbbr   String      @db.VarChar(255)
+  constitution Int        
+  agility     Int
+  selfdiscipline Int
+  memory      Int
+  reasoning   Int
+  strength    Int
+  quickness   Int
+  presence    Int
+  empathy     Int
+  intuition   Int
+
+  // Defenses
+  defenses    String      @db.VarChar(255)
+  armorAt     String      @db.VarChar(255)
+  defensivebonusDb String @db.VarChar(255)
+  withshield  String      @db.VarChar(255)
+  movementpenalty String  @db.VarChar(255)
+  helmet      String      @db.VarChar(255)
+  armgreaves  String      @db.VarChar(255)
+  leggreaves  String      @db.VarChar(255)
+  distancepenalty String  @db.VarChar(255)
+  wounds      String      @db.VarChar(255)
+
+  // Languages
+  languages   String      @db.VarChar(255)
+  spoken      String      @db.VarChar(255)
+  writen      String      @db.VarChar(255)
+
+  // Miscellaneous
+  miscellaneous String    @db.VarChar(255)
+  hitdice     String      @db.VarChar(255)
+  developmentpoints Int 
+  primaryskills String    @db.VarChar(255)
+  attributemodAbbr String @db.VarChar(255)
+  cost        Int
+  professionAbbr String   @db.VarChar(255)
+  nbranks     Int
+  attributeAbbr String    @db.VarChar(255)
+  miscellaneousAbbr String @db.VarChar(255)
+  itemAbbr    String      @db.VarChar(255)
+  secondaryskills String  @db.VarChar(255)
+  weaponskills String     @db.VarChar(255)
+  ob          Int
+  db          Int
+  resistances String      @db.VarChar(255)
+  notes       String      @db.VarChar(255)
+
+  // Possessions
+  weight      Int
+  possessions String      @db.VarChar(255)
+  mithril     Int
+  gold        Int
+  silver      Int
+  bronze      Int
+  copper      Int
+  iron        Int
+
+  // Spells
+  spelllists  String      @db.VarChar(255)
+  realm       String      @db.VarChar(255)
+  listtype    String      @db.VarChar(255)
+  levelmax    Int
+  learnchances Int
+  bookandpage String      @db.VarChar(255)
+  spellname   String      @db.VarChar(255)
+  spellclass  String      @db.VarChar(255)
+  spellduration String    @db.VarChar(255)
+  spellrange  String      @db.VarChar(255)
+  description String      @db.VarChar(255)
+  relations   String      @db.VarChar(255)
+
+  // Checks
+  constitutioncheck Int
+  agilitycheck Int
+  selfdisciplinecheck Int
+  memorycheck Int
+  reasoningcheck Int
+  strengthcheck Int
+  quicknesscheck Int
+  presencecheck Int
+  empathycheck Int
+  intuitioncheck Int
+  resistancecheck Int
+  ennemydb Int
+  result String           @db.VarChar(255)
+
+  // Calculations
+  devAbbr String          @db.VarChar(255)
+  loadcapacity Int
+  weighttotal Int
+  sheetColors String      @db.VarChar(255)
+  totalhpcalcmode String  @db.VarChar(255)
+  legacycalc String       @db.VarChar(255)
+  nocalc String           @db.VarChar(255)
+  hpcalcdescription String @db.VarChar(255)
+  professionbonusmode String @db.VarChar(255)
+  legacyprofbonus String  @db.VarChar(255)
+  flatprofbonus String    @db.VarChar(255)
+  profbonusmodedescription String @db.VarChar(255)
+  bmr Int
+  walk Int
+  fastwalk Int
+  run Int
+  sprint Int
+  accsprint Int
+  dash Int
+  skilldevmode String     @db.VarChar(255)
+  legacyskilldev String   @db.VarChar(255)
+  flatskilldev String     @db.VarChar(255)
+  skilldevmodedescription String @db.VarChar(255)
+  secundarydevelopmentpoints Int
+  secondaryskilldevmode String @db.VarChar(255)
+  bonus10 Int
+  bonus20 Int
+  bonus25 Int
+  bonus30 Int
+  bonus40 Int
+  bonus50 Int
+  secondaryskilldevmodedescription String @db.VarChar(255)
+
+  // Appearance
+  backgroundColor String  @db.VarChar(255)
+  default String          @db.VarChar(255)
+  white String            @db.VarChar(255)
+  lilac String            @db.VarChar(255)
+  grayscale String        @db.VarChar(255)
+  book String             @db.VarChar(255)
+  seasonSummer String     @db.VarChar(255)
+  seasonFall String       @db.VarChar(255)
+  seasonWinter String     @db.VarChar(255)
+  seasonSpring String     @db.VarChar(255)
+  backgroundcolordesc String @db.VarChar(255)
+
+  //Update informations
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  createdBy String       @db.VarChar(255)
+  updatedBy String       @db.VarChar(255)
+  }

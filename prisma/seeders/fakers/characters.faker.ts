@@ -1,0 +1,172 @@
+// ESM
+import { faker } from '@faker-js/faker';
+
+export async function createRandomCharacters() {
+  return {
+    data: {
+      // Character Information
+      characterName: `${faker.person.firstName()} ${faker.person.lastName()}`,
+      race: faker.string.sample(),
+      profession: faker.string.sample(),
+      level: faker.number.int({ min: 1, max: 100 }),
+      experience: faker.number.int({ min: 0, max: 10000 }),
+      equipment: faker.helpers.arrayElement(['Basic Sword', 'Advanced Sword', 'Magic Wand']),
+      magic: faker.helpers.arrayElement(['None', 'Fireball', 'Heal']),
+      settings: faker.helpers.arrayElement(['Default', 'Custom']),
+
+      // Attributes
+      realmpower: faker.number.int({ min: 1, max: 100 }),
+      powerpoints: faker.number.int({ min: 1, max: 100 }),
+      basehp: faker.number.int({ min: 1, max: 100 }),
+      totalhp: faker.number.int({ min: 1, max: 100 }),
+      actualhp: faker.number.int({ min: 1, max: 100 }),
+      attributes: 'Basic Attributes',
+      temporaryAbbr: 'Temp',
+      potentialAbbr: 'Pot',
+      developmentAbbr: 'Dev',
+      baseAbbr: 'Base',
+      raceAbbr: 'Race',
+      totalAbbr: 'Total',
+      constitution: faker.number.int({ min: 1, max: 100 }),
+      agility: faker.number.int({ min: 1, max: 100 }),
+      selfdiscipline: faker.number.int({ min: 1, max: 100 }),
+      memory: faker.number.int({ min: 1, max: 100 }),
+      reasoning: faker.number.int({ min: 1, max: 100 }),
+      strength: faker.number.int({ min: 1, max: 100 }),
+      quickness: faker.number.int({ min: 1, max: 100 }),
+      presence: faker.number.int({ min: 1, max: 100 }),
+      empathy: faker.number.int({ min: 1, max: 100 }),
+      intuition: faker.number.int({ min: 1, max: 100 }),
+
+      // Defenses
+      defenses: 'Basic Defenses',
+      armorAt: faker.helpers.arrayElement(['Leather', 'Chainmail', 'Plate']),
+      defensivebonusDb: 'Basic',
+      withshield: faker.helpers.arrayElement(['Yes', 'No']),
+      movementpenalty: 'None',
+      helmet: faker.helpers.arrayElement(['None', 'Leather Helmet', 'Iron Helmet']),
+      armgreaves: faker.helpers.arrayElement(['None', 'Leather Greaves', 'Iron Greaves']),
+      leggreaves: faker.helpers.arrayElement(['None', 'Leather Greaves', 'Iron Greaves']),
+      distancepenalty: 'None',
+      wounds: 'None',
+
+      // Languages
+      languages: 'Common',
+      spoken: 'Common',
+      writen: 'Common',
+
+      // Miscellaneous
+      miscellaneous: 'None',
+      hitdice: '1d6',
+      developmentpoints: faker.number.int({ min: 1, max: 100 }),
+      primaryskills: 'Basic Skills',
+      attributemodAbbr: 'AttrMod',
+      cost: faker.number.int({ min: 0, max: 1000 }),
+      professionAbbr: 'Prof',
+      nbranks: faker.number.int({ min: 1, max: 10 }),
+      attributeAbbr: 'Attr',
+      miscellaneousAbbr: 'Misc',
+      itemAbbr: 'Item',
+      secondaryskills: 'None',
+      weaponskills: 'Basic Weapon Skills',
+      ob: faker.number.int({ min: 1, max: 100 }),
+      db: faker.number.int({ min: 1, max: 100 }),
+      resistances: 'Basic Resistances',
+      notes: 'None',
+
+      // Possessions
+      weight: faker.number.int({ min: 1, max: 100 }),
+      possessions: 'None',
+      mithril: faker.number.int({ min: 0, max: 100 }),
+      gold: faker.number.int({ min: 0, max: 100 }),
+      silver: faker.number.int({ min: 0, max: 100 }),
+      bronze: faker.number.int({ min: 0, max: 100 }),
+      copper: faker.number.int({ min: 0, max: 100 }),
+      iron: faker.number.int({ min: 0, max: 100 }),
+
+      // Spells
+      spelllists: 'None',
+      realm: 'None',
+      listtype: 'None',
+      levelmax: faker.number.int({ min: 1, max: 100 }),
+      learnchances: faker.number.int({ min: 0, max: 100 }),
+      bookandpage: 'None',
+      spellname: 'None',
+      spellclass: 'None',
+      spellduration: 'None',
+      spellrange: 'None',
+      description: 'None',
+      relations: 'None',
+
+      // Checks
+      constitutioncheck: faker.number.int({ min: 1, max: 100 }),
+      agilitycheck: faker.number.int({ min: 1, max: 100 }),
+      selfdisciplinecheck: faker.number.int({ min: 1, max: 100 }),
+      memorycheck: faker.number.int({ min: 1, max: 100 }),
+      reasoningcheck: faker.number.int({ min: 1, max: 100 }),
+      strengthcheck: faker.number.int({ min: 1, max: 100 }),
+      quicknesscheck: faker.number.int({ min: 1, max: 100 }),
+      presencecheck: faker.number.int({ min: 1, max: 100 }),
+      empathycheck: faker.number.int({ min: 1, max: 100 }),
+      intuitioncheck: faker.number.int({ min: 1, max: 100 }),
+      resistancecheck: faker.number.int({ min: 1, max: 100 }),
+      ennemydb: faker.number.int({ min: 1, max: 100 }),
+      result: 'None',
+
+      // Calculations
+      devAbbr: 'Dev',
+      loadcapacity: faker.number.int({ min: 1, max: 100 }),
+      weighttotal: faker.number.int({ min: 1, max: 100 }),
+      sheetColors: 'Default',
+      totalhpcalcmode: 'Default',
+      legacycalc: 'None',
+      nocalc: 'None',
+      hpcalcdescription: 'None',
+      professionbonusmode: 'Default',
+      legacyprofbonus: 'None',
+      flatprofbonus: 'None',
+      profbonusmodedescription: 'None',
+      bmr: faker.number.int({ min: 1, max: 100 }),
+      walk: faker.number.int({ min: 1, max: 100 }),
+      fastwalk: faker.number.int({ min: 1, max: 100 }),
+      run: faker.number.int({ min: 1, max: 100 }),
+      sprint: faker.number.int({ min: 1, max: 100 }),
+      accsprint: faker.number.int({ min: 1, max: 100 }),
+      dash: faker.number.int({ min: 1, max: 100 }),
+      skilldevmode: 'Default',
+      legacyskilldev: 'None',
+      flatskilldev: 'None',
+      skilldevmodedescription: 'None',
+      secundarydevelopmentpoints: faker.number.int({ min: 1, max: 100 }),
+      secondaryskilldevmode: 'Default',
+      bonus10: faker.number.int({ min: 1, max: 100 }),
+      bonus20: faker.number.int({ min: 1, max: 100 }),
+      bonus25: faker.number.int({ min: 1, max: 100 }),
+      bonus30: faker.number.int({ min: 1, max: 100 }),
+      bonus40: faker.number.int({ min: 1, max: 100 }),
+      bonus50: faker.number.int({ min: 1, max: 100 }),
+      secondaryskilldevmodedescription: 'None',
+
+      // Appearance
+      backgroundColor: faker.helpers.arrayElement(['White', 'Lilac', 'Grayscale']),
+      default: 'Default',
+      white: 'White',
+      lilac: 'Lilac',
+      grayscale: 'Grayscale',
+      book: 'Book',
+      seasonSummer: 'Summer',
+      seasonFall: 'Fall',
+      seasonWinter: 'Winter',
+      seasonSpring: 'Spring',
+      backgroundcolordesc: 'Default',
+      createdBy: faker.internet.username(),
+      updatedBy: faker.internet.username(),
+    }
+  };
+}
+
+export const users = faker.helpers.multiple(createRandomCharacters, {
+  count: 5,
+});
+
+
